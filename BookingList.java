@@ -103,9 +103,9 @@ public class BookingList
 		if (dayNumber <= 334) return dayNumber - 304; // Nov
 		else return dayNumber - 334; // Dec
 		}
-		public void addBooking(int guestId,int roomNumber,int numberOfGuests,int startDay,int endDay)
+		public void addBooking(int guestId,int roomNumber,int numberOfGuests,int startDa,int endDa)
 		{
-			Booking book=new Booking(guestId,roomNumber,numberOfGuests,startDay,endDay);
+			Booking book=new Booking(guestId,roomNumber,numberOfGuests,startDa,endDa);
 			bookingList.add(book);
 			System.out.println("*** Booking successful! ***");
 		}
@@ -126,7 +126,7 @@ public class BookingList
 				{
 					if(bookingList.get(i).guestId==id)
 					{
-						System.out.println("Booking : "+" Room "+bookingList.get(i).roomNumber+","+bookingList.get(i).numberOfGuests+" guest(s) from "+dayNumberToMonth(startDay)+"/"+dayNumberToDayOfMonth(startDay)+" to "+dayNumberToMonth(endDay)+"/"+dayNumberToDayOfMonth(endDay));
+						System.out.println("Booking : "+" Room "+bookingList.get(i).roomNumber+","+bookingList.get(i).numberOfGuests+" guest(s) from "+dayNumberToMonth(bookingList.get(i).startDay)+"/"+dayNumberToDayOfMonth(bookingList.get(i).startDay)+" to "+dayNumberToMonth(bookingList.get(i).endDay)+"/"+dayNumberToDayOfMonth(bookingList.get(i).endDay));
 					}
 				}
 			}
@@ -136,7 +136,7 @@ public class BookingList
 				{
 					if(bookingList.get(i).roomNumber==id)
 					{
-						System.out.println("Room "+id+" Bookings: "+bookingList.get(i).numberOfGuests+" guest(s) from "+dayNumberToMonth(startDay)+"/"+dayNumberToDayOfMonth(startDay)+" to "+dayNumberToMonth(endDay)+"/"+dayNumberToDayOfMonth(endDay));
+						System.out.println("Room "+id+" Bookings: "+bookingList.get(i).numberOfGuests+" guest(s) from "+dayNumberToMonth(bookingList.get(i).startDay)+"/"+dayNumberToDayOfMonth(bookingList.get(i).startDay)+" to "+dayNumberToMonth(bookingList.get(i).endDay)+"/"+dayNumberToDayOfMonth(bookingList.get(i).endDay));
 					}
 				}
 				
